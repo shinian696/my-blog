@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>CF题解 on 时光机</title>
-    <link>https://www.sssnian.me/categories/cf%E9%A2%98%E8%A7%A3/</link>
+    <link>http://localhost:1313/categories/cf%E9%A2%98%E8%A7%A3/</link>
     <description>Recent content in CF题解 on 时光机</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 06 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.sssnian.me/categories/cf%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/cf%E9%A2%98%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[CF2224C]</title>
-      <link>https://www.sssnian.me/posts/cf2224c/</link>
+      <link>http://localhost:1313/posts/cf2224c/</link>
       <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.sssnian.me/posts/cf2224c/</guid>
+      <guid>http://localhost:1313/posts/cf2224c/</guid>
       <description>&lt;h2 id=&#34;-核心思路&#34;&gt;📝 核心思路&lt;/h2&gt;
 &lt;p&gt;合法括号序列:   &amp;lsquo; ( &amp;rsquo; : 1   &amp;lsquo; ) &amp;rsquo; : -1   &lt;br&gt;
 在1,3,5奇数位置,前缀和要为奇数且大于0 &lt;br&gt;
@@ -111,9 +111,9 @@
     </item>
     <item>
       <title>[CF2227D]</title>
-      <link>https://www.sssnian.me/posts/cf2227d/</link>
+      <link>http://localhost:1313/posts/cf2227d/</link>
       <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.sssnian.me/posts/cf2227d/</guid>
+      <guid>http://localhost:1313/posts/cf2227d/</guid>
       <description>&lt;h2 id=&#34;-核心思路&#34;&gt;📝 核心思路&lt;/h2&gt;
 &lt;p&gt;考虑回文串,单个数也是一个回文串&lt;br&gt;
 所以不管数字怎么排列,都能保证mex&amp;gt;=1,那我们只要考虑有没有mex大于1的回文串,那也就是考虑0的位置&lt;br&gt;

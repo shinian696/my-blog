@@ -48,6 +48,6 @@ title: "主页"
 <hr>
 <!-- 赞助模块 -->
 <p style="text-align: center; margin-bottom: 10px;">☕我需要疯狂星期四</p>
-<img src="/sponsor.png" alt="赞助收款码" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);">
+<img src="/wxskm.png" alt="赞助收款码" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);">
 </div>
 </div>
