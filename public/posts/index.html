@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | My New Hugo Site</title>
+<title>Posts | 时光机</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - My New Hugo Site">
+<meta name="description" content="Posts - 时光机">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9aab32e712d956d3ae3ab9b2ae994c8fd8be733a30d51c6971b64a802ee0b8be.css" integrity="sha256-mqsy5xLZVtOuOrmyrplMj9i&#43;czow1RxpcbZKgC7guL4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -71,7 +71,7 @@
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="http://localhost:1313/" accesskey="h" title="时光机 (Alt + H)">时光机</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -108,28 +108,26 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Test
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
+    <h2 class="entry-hint-parent">[CF2227D]
     </h2>
   </header>
   <div class="entry-content">
-    <p>这里开始写你的正文内容，支持 Markdown 语法！ 比如写一段 C&#43;&#43; 代码：
-#include &lt;iostream&gt; using namespace std; int main() { cout &lt;&lt; &#34;Hello Hugo!&#34; &lt;&lt; endl; return 0; } </p>
+    <p>📝 核心思路 考虑回文串,单个数也是一个回文串
+所以不管数字怎么排列,都能保证mex&gt;=1,那我们只要考虑有没有mex大于1的回文串,那也就是考虑0的位置
+因为有两个0,我们考虑三种情况:
+1.0作为中心,双指针从两边出去,找回文串 因为有两个0 所以这有两种情况
+2.两个0作为一对,首先保证两个0 之间的数是回文串,然后双指针从两边出去找回文串。
+代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; typedef long long ll; void solve(){ int n; cin&gt;&gt;n; vector&lt;int&gt; a(2*n); int pos1=-1; int pos2=-1; for(int i=0;i&lt;2*n;i&#43;&#43;){ cin&gt;&gt;a[i]; if(a[i]==0){ if(pos1==-1) pos1=i; else pos2=i; } } vector&lt;bool&gt; vis(n&#43;1,false); vis[0]=true; int ans=1; // 0作为中心; int l=pos1-1,r=pos1&#43;1; int mex=1; while(l&gt;=0 &amp;&amp; r&lt;2*n &amp;&amp; a[l]==a[r]){ vis[a[l]]=true; while(vis[mex]) mex&#43;&#43;; l--; r&#43;&#43;; } ans=max(ans,mex); vis.assign(n&#43;1,false); l=pos2-1,r=pos2&#43;1; mex=1; while(l&gt;=0 &amp;&amp; r&lt;2*n &amp;&amp; a[l]==a[r]){ vis[a[l]]=true; while(vis[mex]) mex&#43;&#43;; l--; r&#43;&#43;; } ans=max(ans,mex); // 0作为一对 vis.assign(n&#43;1,false); mex-1; l=pos1&#43;1,r=pos2-1; bool T=true; while(l&lt;pos2 &amp;&amp; r&gt;pos1){ if(a[l]!=a[r]){ T=false; break; } vis[a[l]]=true; l&#43;&#43;; r--; } if(T){ while(vis[mex]) mex&#43;&#43;; l=pos1-1; r=pos2&#43;1; while(l&gt;=0 &amp;&amp; r&lt;2*n &amp;&amp; a[l]==a[r]){ vis[a[l]]=true; while(vis[mex]) mex&#43;&#43;; l--; r&#43;&#43;; } } ans=max(ans,mex); cout&lt;&lt;ans&lt;&lt;&#34;\n&#34;; } int main(){ ios::sync_with_stdio(false); cin.tie(0); cout.tie(0); int ttt=1; cin&gt;&gt;ttt; while(ttt--){ solve(); } //solve(); return 0; } </p>
   </div>
   <footer class="entry-footer">
 
-<span title='2026-08-06 12:59:53 +0800 CST'>August 6, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Test" href="http://localhost:1313/posts/test/"></a>
+<span title='2026-08-06 00:00:00 +0000 UTC'>August 6, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to [CF2227D]" href="http://localhost:1313/posts/test/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">时光机</a></span> · 
 
     
     

@@ -1,0 +1,370 @@
+/* 1. 缩小网页主体内容与上方顶栏的整体间距 */
+.main {
+    padding-top: 5px !important; /* 默认数值通常比较大，这里将其改小 */
+}
+
+/* 2. 专门将主页的欢迎卡片向上提拉 */
+.home-info {
+    margin-top: -150px !important; /* 负数会让元素往上移。数值越小（如 -40px, -60px），位置越靠上 */
+}
+
+/* 放大顶部导航栏的网站标题 */
+.header .logo a {
+    font-size: 40px !important; /* 默认大概是 24px，你可以随意把 32 改得更大 */
+}
+
+/* 放大主页欢迎信息的大标题 */
+.home-info .entry-header h1 {
+    font-size: 10px !important; /* 默认大概是 30 多，数值越大字越大 */
+}
+
+
+/* 1. 确保顶部网站总标题没有边框 */
+.header .logo a {
+    border: none !important;
+}
+
+/* 2. 完美适配日夜模式的独立圆角目录卡片 */
+.nav-card {
+    /* 【核心魔法】：直接调用主题自带的变量，黑夜白天自动无缝切换！ */
+    background-color: var(--entry) !important; /* 卡片背景色 */
+    border: 2px solid var(--border) !important; /* 边框色 */
+    color: var(--primary) !important;           /* 文字主色 */
+    
+    /* 形状和排版 */
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+/* 3. 鼠标悬停在框上时的特效 */
+.nav-card:hover {
+    border-color: var(--primary) !important; /* 悬停时边框变为主色 */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* 4. 调整框内标题和描述文字的间距 */
+.nav-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: var(--primary) !important; /* 标题跟随主题主色 */
+}
+
+.nav-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--secondary) !important; /* 描述文字跟随主题次级色 */
+}
+
+
+
+/* 1. 覆盖网页上下全高的抽屉本体 */
+.hover-widget {
+    position: fixed;
+    top: 0;                       /* 紧贴网页最顶部 */
+    bottom: 0;                    /* 紧贴网页最底部，实现全高覆盖 */
+    right: -340px;                /* 隐藏在右侧 */
+    width: 340px;
+    background-color: var(--entry);
+    border-left: 2px solid var(--border); /* 既然是全高，只需要左边框就行了 */
+    box-shadow: -5px 0px 25px rgba(0,0,0,0.1);
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 9999;
+    display: flex;                /* 开启弹性布局，方便内部滚动 */
+    flex-direction: column;
+}
+
+.hover-widget:hover {
+    right: 0;
+}
+
+/* 2. 露在外面的“把手” (依然保持在屏幕正中间) */
+.widget-tab {
+    position: absolute;
+    left: -38px;
+    top: 50%;                     /* 垂直居中 */
+    transform: translateY(-50%);
+    background-color: var(--entry);
+    border: 2px solid var(--border);
+    border-right: none;
+    padding: 20px 8px;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    box-shadow: -3px 0px 10px rgba(0,0,0,0.03);
+}
+
+.widget-tab span {
+    writing-mode: vertical-rl;
+    letter-spacing: 3px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* 3. 面板内部排版（占满全高并支持自动滚动） */
+.widget-content {
+    padding: 40px 25px;           /* 顶部和底部留出 40px 的呼吸空间 */
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1;                      /* 自动填满所有剩余高度 */
+    overflow-y: auto;             /* 内部内容过多时，只在抽屉内部滚动 */
+}
+
+/* 4. 精致的头像样式 */
+.widget-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;           /* 变成正圆形 */
+    object-fit: cover;            /* 保证头像不变形 */
+    border: 3px solid var(--border); /* 给头像加个质感边框 */
+    margin: 0 auto 15px auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 5. 个人简介段落样式 */
+.widget-bio {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.widget-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--primary);
+    font-size: 20px;
+    text-align: center;
+}
+
+.widget-content a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.widget-content hr {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 15px 0;
+}
+
+/* 美化一下抽屉里的滚动条 */
+.widget-content::-webkit-scrollbar {
+    width: 6px;
+}
+.widget-content::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 3px;
+}
+
+
+
+<!-- 右侧悬浮关于我模块 -->
+<div class="hover-widget">
+    <!-- 露在外面的把手 -->
+    <div class="widget-tab">
+        <span>关于我</span>
+    </div>
+    
+    <!-- 抽屉里面的内容 -->
+    <div class="widget-content">
+        <!-- 头像图片 (放在 static 文件夹下) -->
+        <img class="widget-avatar" src="/avatar.jpg" alt="头像">
+        
+        <!-- 名字与个人简介 -->
+        <h3>vda</h3>
+        <p class="widget-bio">
+            算法与设计的交叉探索者。热爱 C++ 竞技编程（死磕线段树与几何算法），日常折腾 Linux 系统命令。设计上偏爱带有真实侧影与水彩质感的电影级叙事海报。写代码之余，喜欢听着周杰伦的歌剪辑 MV，梦想是像路飞一样奔赴自由与浪漫的冒险！
+        </p>
+        
+        <hr>
+
+        <!-- 社交与联系方式 -->
+        <p>✉️ <strong>Email:</strong><br>your@email.com</p>
+        <p>🐙 <strong>GitHub:</strong><br><a href="https://github.com/你的ID" target="_blank">@你的ID</a></p>
+        <p>🎬 <strong>视频/作品:</strong><br><a href="#" target="_blank">@vda_空间</a></p>
+        
+        <hr>
+        
+        <!-- 赞助模块 -->
+        <p style="text-align: center; margin-bottom: 10px;">☕ 赞助我一杯咖啡</p>
+        <img src="/sponsor.png" alt="赞助收款码" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);">
+    </div>
+</div>
+
+
+/* =========================================
+   C++ 高级代码块美化 (带圆角和阴影)
+========================================= */
+
+/* 1. 让整个代码块变成精致的圆角卡片 */
+.highlight {
+    border-radius: 12px;
+    overflow: hidden; /* 让里面的代码背景乖乖贴合圆角 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* 增加立体阴影 */
+    margin: 25px 0; /* 让代码块和上下文字有足够的呼吸空间 */
+}
+
+/* 2. 调整代码块内部的间距和字体 */
+.highlight pre {
+    margin: 0 !important;
+    padding: 20px !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* 程序员专属等宽字体 */
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 3. 美化行号那一列的样式，让它不那么突兀 */
+.highlight .ln {
+    margin-right: 15px;
+    color: #666; /* 行号颜色稍微暗一点，不喧宾夺主 */
+    border-right: 1px solid #444; /* 在行号和代码之间加一条细细的分割线 */
+    padding-right: 15px;
+}
+
+/* 代码块横向滚动条美化 (当代码太长时) */
+.highlight pre::-webkit-scrollbar {
+    height: 8px;
+}
+.highlight pre::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   浅色系优雅可折叠代码块 (贴合纸张质感)
+========================================= */
+
+/* 1. 折叠框的外层容器：干净的白底与极细边框 */
+details.code-collapse {
+    background-color: #ffffff; 
+    border: 1px solid #eaeaea;    /* 柔和的浅灰边框 */
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* 极微弱的高级感阴影 */
+    overflow: hidden;
+}
+
+/* 2. 顶部的点击控制栏：带有纸张温度的暖灰 */
+details.code-collapse summary {
+    background-color: #fcfbf9;    /* 贴合主网页的暖灰纸张色 */
+    color: #4a4a4a;               /* 舒服的深灰色文字，不刺眼 */
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    list-style: none; 
+    border-bottom: 1px solid #eaeaea;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+/* 悬停时稍微加深一点点 */
+details.code-collapse summary:hover {
+    background-color: #f5f4f0; 
+}
+
+/* 3. 自定义丝滑的旋转小箭头：改成优雅的低饱和灰色 */
+details.code-collapse summary::-webkit-details-marker {
+    display: none;
+}
+details.code-collapse summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #999999; 
+    transition: transform 0.2s ease;
+}
+details.code-collapse[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* 4. 代码块本体的融合 */
+details.code-collapse .highlight {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* 5. 通用代码块内部排版调整 */
+.highlight pre {
+    margin: 0 !important;
+    padding: 20px !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: #ffffff !important; /* 强制纯白背景，保持整洁 */
+}
+
+/* 6. 行号美化：弱化行号的存在感 */
+.highlight .ln {
+    margin-right: 15px;
+    color: #cccccc;               /* 很浅的灰色，不抢代码的风头 */
+    border-right: 1px solid #f0f0f0; 
+    padding-right: 15px;
+}
+
+/* 7. 代码块内的细长优雅滚动条 */
+.highlight pre::-webkit-scrollbar {
+    height: 6px;
+}
+.highlight pre::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+}
+
+/* =========================================
+   终极排版调优：正文、代码字体与背景洗白
+========================================= */
+
+/* 1. 缩小正文字体，提升精致感 */
+.post-content p, 
+.post-content li,
+.widget-content p {
+    font-size: 15px !important;    /* 默认通常偏大，统一缩小到 15px */
+    line-height: 1.8 !important;   /* 增大行距，让文字有呼吸感 */
+}
+
+/* 2. 放大代码块字体，保护眼睛 */
+.post-content pre,
+.post-content code,
+.highlight pre,
+.highlight pre code {
+    font-size: 16px !important;    /* 强制放大代码字体 */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* 3. 强制洗白白天模式下的代码块背景 */
+body:not(.dark) .highlight,
+body:not(.dark) .highlight pre,
+body:not(.dark) .post-content pre {
+    background-color: #f8f9fa !important; /* 干净的浅灰白背景 */
+    border: 1px solid #eaeaea !important; /* 增加精致的极细边框 */
+    color: #333333 !important;            /* 确保基础代码文字是深色的 */
+}
+
+/* 4. 修复白天模式下行内小代码 (比如单个 `vector`) 的样式 */
+body:not(.dark) .post-content code {
+    background-color: #f1f2f3 !important;
+    color: #605757 !important;            /* 采用经典的亮橙/红色高亮 */
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+}
+
+/* 5. 确保黑夜模式下代码块依然保持暗色护眼 */
+body.dark .highlight,
+body.dark .highlight pre,
+body.dark .post-content pre {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+}

@@ -1,4 +1,25 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = 'zh-CN'
+title = '时光机'
 theme = 'PaperMod'
+
+[params]
+  # 【关键开关】：让首页去读取一个不存在的文件夹，从而实现“首页隐藏所有文章”
+  mainSections = ["hidden_folder"]
+
+# Markdown 渲染与高级代码高亮设置
+# ==========================================
+[markup]
+  # 1. 允许渲染 HTML（之前加的，解决首页空白）
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
+  # 2. 全新加入：高级代码高亮配置
+  [markup.highlight]
+    codeFences = true       # 允许使用 ```cpp 这种语法
+    guessSyntax = true      # 如果没写语言，自动猜测（极大提升便利性）
+    lineNos = true          # 【关键】开启代码行号！
+    style = "github"       # 【核心颜值】代码主题，Monokai 是最经典的深色极客风
+    tabWidth = 4            # C++ 习惯的 4 空格缩进
+    noClasses = false       # 允许我们用 CSS 进一步美化它
