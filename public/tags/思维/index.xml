@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>思维 on 时光机</title>
-    <link>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4/</link>
+    <link>https://www.sssnian.me/tags/%E6%80%9D%E7%BB%B4/</link>
     <description>Recent content in 思维 on 时光机</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 06 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%80%9D%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.sssnian.me/tags/%E6%80%9D%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[CF2224C]</title>
-      <link>http://localhost:1313/posts/cf2224c/</link>
+      <link>https://www.sssnian.me/posts/cf2224c/</link>
       <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cf2224c/</guid>
+      <guid>https://www.sssnian.me/posts/cf2224c/</guid>
       <description>&lt;h2 id=&#34;-核心思路&#34;&gt;📝 核心思路&lt;/h2&gt;
 &lt;p&gt;合法括号序列:   &amp;lsquo; ( &amp;rsquo; : 1   &amp;lsquo; ) &amp;rsquo; : -1   &lt;br&gt;
 在1,3,5奇数位置,前缀和要为奇数且大于0 &lt;br&gt;
