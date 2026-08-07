@@ -7,6 +7,9 @@ theme = 'PaperMod'
   # 【关键开关】：让首页去读取一个不存在的文件夹，从而实现“首页隐藏所有文章”
   mainSections = ["hidden_folder"]
 
+  # 开启代码块“一键复制”功能
+  ShowCodeCopyButtons = true
+
 # Markdown 渲染与高级代码高亮设置
 # ==========================================
 [markup]
