@@ -5,11 +5,58 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Categories | 时光机</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
+<title>[CF1115 div2] | 时光机</title>
+<meta name="keywords" content="思维">
+<meta name="description" content="
+A
+合法括号序列:   &lsquo; ( &rsquo; : 1   &lsquo; ) &rsquo; : -1   
+在1,3,5奇数位置,前缀和要为奇数且大于0 
+在2,4,6偶数位置,前缀和要为偶数且大于等于0  
+且在末尾前缀和为0
+由上述规律考虑: 
+我们考虑a和b的总前缀和 
+则奇数位置 前缀和为偶数 且大于等于2 
+偶数位置 前缀和为偶数 且大于等于0
+且到末尾 要为0
+考虑交换:如果当前位置不同,则让前缀和小的加上1,大的减去1
+
+代码
+
+
+
+
+
+
+
+
+B
+合法括号序列:   &lsquo; ( &rsquo; : 1   &lsquo; ) &rsquo; : -1   
+在1,3,5奇数位置,前缀和要为奇数且大于0 
+在2,4,6偶数位置,前缀和要为偶数且大于等于0  
+且在末尾前缀和为0
+由上述规律考虑: 
+我们考虑a和b的总前缀和 
+则奇数位置 前缀和为偶数 且大于等于2 
+偶数位置 前缀和为偶数 且大于等于0
+且到末尾 要为0
+考虑交换:如果当前位置不同,则让前缀和小的加上1,大的减去1
+
+代码
+
+
+1
+2
+3
+
+
+
+&lt;/details&gt;
+---
+
+
+">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/categories/">
+<link rel="canonical" href="http://localhost:1313/posts/a/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.ed28ddc56276fef2e99e7fc1126385a10ddaf2550f19e514672342131436eb09.css" integrity="sha256-7SjdxWJ2/vLpnn/BEmOFoQ3a8lUPGeUUZyNCExQ26wk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +65,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/a/">
 <noscript>
     <style>
         #theme-toggle,
@@ -67,7 +113,7 @@
 
 </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
@@ -100,15 +146,76 @@
     </nav>
 </header>
 <main class="main">
-<header class="page-header">
-    <h1>Categories</h1>
-</header>
 
-<ul class="terms-tags">
-            <li>
-                <a href="http://localhost:1313/categories/cf%E9%A2%98%E8%A7%A3/">CF题解 <sup><strong><sup>3</sup></strong></sup> </a>
-            </li>
-</ul>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [CF1115 div2]
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-07 00:00:00 +0000 UTC'>August 7, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><hr>
+<h1 id="a">A<a hidden class="anchor" aria-hidden="true" href="#a">#</a></h1>
+<p>合法括号序列:   &lsquo; ( &rsquo; : 1   &lsquo; ) &rsquo; : -1   <br>
+在1,3,5奇数位置,前缀和要为奇数且大于0 <br>
+在2,4,6偶数位置,前缀和要为偶数且大于等于0  <br>
+且在末尾前缀和为0</p>
+<p>由上述规律考虑: <br>
+我们考虑a和b的总前缀和 <br>
+则奇数位置 前缀和为偶数 且大于等于2 <br>
+偶数位置 前缀和为偶数 且大于等于0<br>
+且到末尾 要为0<br>
+考虑交换:如果当前位置不同,则让前缀和小的加上1,大的减去1</p>
+<details class="code-collapse">
+<summary>代码</summary>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"></code></pre></td></tr></table>
+</div>
+</div></details>
+<hr>
+<h1 id="b">B<a hidden class="anchor" aria-hidden="true" href="#b">#</a></h1>
+<p>合法括号序列:   &lsquo; ( &rsquo; : 1   &lsquo; ) &rsquo; : -1   <br>
+在1,3,5奇数位置,前缀和要为奇数且大于0 <br>
+在2,4,6偶数位置,前缀和要为偶数且大于等于0  <br>
+且在末尾前缀和为0</p>
+<p>由上述规律考虑: <br>
+我们考虑a和b的总前缀和 <br>
+则奇数位置 前缀和为偶数 且大于等于2 <br>
+偶数位置 前缀和为偶数 且大于等于0<br>
+且到末尾 要为0<br>
+考虑交换:如果当前位置不同,则让前缀和小的加上1,大的减去1</p>
+<details class="code-collapse">
+<summary>代码</summary>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">---</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/%E6%80%9D%E7%BB%B4/">思维</a></li>
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
@@ -188,6 +295,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
