@@ -368,3 +368,24 @@ body.dark .post-content pre {
     background-color: #1e1e1e !important;
     border: 1px solid #333333 !important;
 }
+
+
+/* =========================================
+   精准调优：加深 C++ 运算符 (如 <<, =, +, ; ) 的颜色
+========================================= */
+
+/* 1. 白天模式下：将运算符加深，并稍微加粗使其更醒目 */
+body:not(.dark) .highlight .o,    /* .o 代表 Operator (如 = , + , <<) */
+body:not(.dark) .highlight .p,    /* .p 代表 Punctuation (如 { , } , ; ) */
+body:not(.dark) .highlight .ow {  /* .ow 代表 Operator Word (如 and, or) */
+    color: #d73a49 !important;    /* 强制改为纯黑色（也可以改成 #005cc5 深蓝色） */
+    font-weight: 600 !important;  /* 稍微加粗，增强存在感 */
+}
+
+/* 2. 黑夜模式下：将运算符提亮，防止融进暗色背景 */
+body.dark .highlight .o, 
+body.dark .highlight .p,
+body.dark .highlight .ow {
+    color: #d73a49 !important;    /* 强制改为高亮浅灰色 */
+    font-weight: 600 !important;
+}
