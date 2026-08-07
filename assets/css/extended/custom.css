@@ -378,7 +378,7 @@ body.dark .post-content pre {
 body:not(.dark) .highlight .o,    /* .o 代表 Operator (如 = , + , <<) */
 body:not(.dark) .highlight .p,    /* .p 代表 Punctuation (如 { , } , ; ) */
 body:not(.dark) .highlight .ow {  /* .ow 代表 Operator Word (如 and, or) */
-    color: #b84c57 !important;    /* 强制改为纯黑色（也可以改成 #005cc5 深蓝色） */
+    color: #e36209 !important;    /* 强制改为纯黑色（也可以改成 #005cc5 深蓝色） */
     font-weight: 600 !important;  /* 稍微加粗，增强存在感 */
 }
 
@@ -386,6 +386,6 @@ body:not(.dark) .highlight .ow {  /* .ow 代表 Operator Word (如 and, or) */
 body.dark .highlight .o, 
 body.dark .highlight .p,
 body.dark .highlight .ow {
-    color: #b84c57 !important;    /* 强制改为高亮浅灰色 */
+    color: #e36209 !important;    /* 强制改为高亮浅灰色 */
     font-weight: 600 !important;
 }
