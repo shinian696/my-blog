@@ -166,40 +166,6 @@
 
 
 
-<!-- 右侧悬浮关于我模块 -->
-<div class="hover-widget">
-    <!-- 露在外面的把手 -->
-    <div class="widget-tab">
-        <span>关于我</span>
-    </div>
-    
-    <!-- 抽屉里面的内容 -->
-    <div class="widget-content">
-        <!-- 头像图片 (放在 static 文件夹下) -->
-        <img class="widget-avatar" src="/avatar.jpg" alt="头像">
-        
-        <!-- 名字与个人简介 -->
-        <h3>vda</h3>
-        <p class="widget-bio">
-            算法与设计的交叉探索者。热爱 C++ 竞技编程（死磕线段树与几何算法），日常折腾 Linux 系统命令。设计上偏爱带有真实侧影与水彩质感的电影级叙事海报。写代码之余，喜欢听着周杰伦的歌剪辑 MV，梦想是像路飞一样奔赴自由与浪漫的冒险！
-        </p>
-        
-        <hr>
-
-        <!-- 社交与联系方式 -->
-        <p>✉️ <strong>Email:</strong><br>your@email.com</p>
-        <p>🐙 <strong>GitHub:</strong><br><a href="https://github.com/你的ID" target="_blank">@你的ID</a></p>
-        <p>🎬 <strong>视频/作品:</strong><br><a href="#" target="_blank">@vda_空间</a></p>
-        
-        <hr>
-        
-        <!-- 赞助模块 -->
-        <p style="text-align: center; margin-bottom: 10px;">☕ 赞助我一杯咖啡</p>
-        <img src="/sponsor.png" alt="赞助收款码" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);">
-    </div>
-</div>
-
-
 /* =========================================
    C++ 高级代码块美化 (带圆角和阴影)
 ========================================= */
@@ -361,55 +327,107 @@ body:not(.dark) .post-content code {
     border-radius: 4px !important;
 }
 
-/* 5. 确保黑夜模式下代码块依然保持暗色护眼 */
-body.dark .highlight,
-body.dark .highlight pre,
-body.dark .post-content pre {
-    background-color: #1e1e1e !important;
-    border: 1px solid #333333 !important;
-}
-
 
 /* =========================================
-   精准调优：加深 C++ 运算符 (如 <<, =, +, ; ) 的颜色
+   白天模式精调：保留你的个性化颜色
 ========================================= */
 
 /* 1. 白天模式下：将运算符加深，并稍微加粗使其更醒目 */
-body:not(.dark) .highlight .o,    /* .o 代表 Operator (如 = , + , <<) */
-body:not(.dark) .highlight .p,    /* .p 代表 Punctuation (如 { , } , ; ) */
-body:not(.dark) .highlight .ow {  /* .ow 代表 Operator Word (如 and, or) */
-    color: #e36209 !important;    /* 强制改为纯黑色（也可以改成 #005cc5 深蓝色） */
-    font-weight: 600 !important;  /* 稍微加粗，增强存在感 */
+body:not(.dark) .highlight .o,    
+body:not(.dark) .highlight .p,    
+body:not(.dark) .highlight .ow {  
+    color: #e36209 !important;    
+    font-weight: 600 !important;  
 }
 
-/* 2. 黑夜模式下：将运算符提亮，防止融进暗色背景 */
-body.dark .highlight .o, 
-body.dark .highlight .p,
-body.dark .highlight .ow {
-    color: #e36209 !important;    /* 强制改为高亮浅灰色 */
-    font-weight: 600 !important;
-}
-
-/* =========================================
-   精准调优：将代码中的数字全部改为蓝色
-========================================= */
-
-/* 1. 白天模式下：清爽易读的深蓝色 (GitHub 风格) */
-body:not(.dark) .highlight .m,    /* .m 代表通用的 Number (数字) */
-body:not(.dark) .highlight .mi,   /* .mi 代表 Integer (整数，比如 123) */
-body:not(.dark) .highlight .mf,   /* .mf 代表 Float (浮点数，比如 3.14) */
-body:not(.dark) .highlight .mh,   /* .mh 代表 Hex (十六进制，比如 0xff) */
-body:not(.dark) .highlight .mo,   /* .mo 代表 Oct (八进制) */
-body:not(.dark) .highlight .il {  /* .il 代表 Integer Long (长整型) */
+/* 2. 白天模式下：清爽易读的深蓝色 */
+body:not(.dark) .highlight .m,    
+body:not(.dark) .highlight .mi,   
+body:not(.dark) .highlight .mf,   
+body:not(.dark) .highlight .mh,   
+body:not(.dark) .highlight .mo,   
+body:not(.dark) .highlight .il {  
     color: #005cc5 !important;    
 }
 
-/* 2. 黑夜模式下：高对比度的明亮蓝 (类似 One Dark 主题) */
+
+/* =========================================
+   黑夜模式：GitHub Dark High Contrast 像素级复刻
+========================================= */
+
+/* 1. 基础容器：极致的近纯黑背景 + 高亮白字 */
+body.dark .highlight,
+body.dark .highlight pre,
+body.dark .post-content pre {
+    background-color: #0a0c10 !important; 
+    border: 1px solid #4a545e !important; 
+    color: #f0f3f6 !important;            
+}
+
+/* 2. 关键字与类型 (如 int, return, if) -> 荧光珊瑚红 */
+body.dark .highlight .k, 
+body.dark .highlight .kd, 
+body.dark .highlight .kn, 
+body.dark .highlight .kr, 
+body.dark .highlight .kt {
+    color: #ff7b72 !important;
+    font-weight: 600 !important;
+}
+
+/* 3. 宏定义与预处理 (如 #include) -> 荧光珊瑚红 */
+body.dark .highlight .cp {
+    color: #ff7b72 !important;
+    font-weight: 600 !important;
+}
+
+/* 4. 函数名 (如 solve, main) -> 明亮的霓虹紫 */
+body.dark .highlight .nf,
+body.dark .highlight .fm {
+    color: #d2a8ff !important;
+    font-weight: 600 !important;
+}
+
+/* 5. 字符串 (如 "YES", "NO") -> 冰蓝色 */
+body.dark .highlight .s, 
+body.dark .highlight .s1, 
+body.dark .highlight .s2, 
+body.dark .highlight .se {
+    color: #a5d6ff !important;
+}
+
+/* 6. 数字 (如 0, 1, 2) -> 亮蓝色 */
 body.dark .highlight .m, 
-body.dark .highlight .mi,
-body.dark .highlight .mf,
+body.dark .highlight .mi, 
+body.dark .highlight .mf, 
 body.dark .highlight .mh,
-body.dark .highlight .mo,
 body.dark .highlight .il {
-    color: #61afef !important;    
+    color: #79c0ff !important;
+}
+
+/* 7. 运算符 (如 +, =, <<) -> 亮蓝色加粗 */
+body.dark .highlight .o, 
+body.dark .highlight .ow {
+    color: #79c0ff !important; 
+    font-weight: 600 !important;
+}
+
+/* 8. 标点符号 (如 {, }, ;, ()) -> 纯白色 */
+body.dark .highlight .p,
+body.dark .highlight .pi {
+    color: #f0f3f6 !important; 
+}
+
+/* 9. 注释 (如 // 核心思路) -> 荧光高亮绿 */
+body.dark .highlight .c, 
+body.dark .highlight .c1, 
+body.dark .highlight .cm {
+    color: #7ee787 !important;
+    font-style: italic !important;
+}
+
+/* 10. 变量名、命名空间及其他 -> 纯白色 */
+body.dark .highlight .nc,
+body.dark .highlight .nx,
+body.dark .highlight .n {
+    color: #f0f3f6 !important;
 }
