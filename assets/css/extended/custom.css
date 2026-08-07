@@ -389,3 +389,27 @@ body.dark .highlight .ow {
     color: #e36209 !important;    /* 强制改为高亮浅灰色 */
     font-weight: 600 !important;
 }
+
+/* =========================================
+   精准调优：将代码中的数字全部改为蓝色
+========================================= */
+
+/* 1. 白天模式下：清爽易读的深蓝色 (GitHub 风格) */
+body:not(.dark) .highlight .m,    /* .m 代表通用的 Number (数字) */
+body:not(.dark) .highlight .mi,   /* .mi 代表 Integer (整数，比如 123) */
+body:not(.dark) .highlight .mf,   /* .mf 代表 Float (浮点数，比如 3.14) */
+body:not(.dark) .highlight .mh,   /* .mh 代表 Hex (十六进制，比如 0xff) */
+body:not(.dark) .highlight .mo,   /* .mo 代表 Oct (八进制) */
+body:not(.dark) .highlight .il {  /* .il 代表 Integer Long (长整型) */
+    color: #005cc5 !important;    
+}
+
+/* 2. 黑夜模式下：高对比度的明亮蓝 (类似 One Dark 主题) */
+body.dark .highlight .m, 
+body.dark .highlight .mi,
+body.dark .highlight .mf,
+body.dark .highlight .mh,
+body.dark .highlight .mo,
+body.dark .highlight .il {
+    color: #61afef !important;    
+}
