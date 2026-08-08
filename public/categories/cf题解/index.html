@@ -135,6 +135,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">[Edu CF193 div2]
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> https://codeforces.com/contest/2253/problem/A A 一张牌要战胜所有牌,容易想到 一段连续数字中 不可能 两两都保持整除关系 所以 数值小的肯定会被一个大于它的 打败 因此这张牌只能是最大的,且它在2- (x-1) 中都没有因子 那就是素数 即最大的为素数就存在
+代码1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; typedef long long ll; bool judge(int x){ for(int i=2;i*i&lt;=x;i&#43;&#43;){ if(x%i==0) return false; } return true; } void solve(){ int n; cin&gt;&gt;n; if(judge(n&#43;1)) cout&lt;&lt;&#34;YES\n&#34;; else cout&lt;&lt;&#34;NO\n&#34;; } int main(){ ios::sync_with_stdio(false); cin.tie(0); cout.tie(0); int ttt=1; cin&gt;&gt;ttt; while(ttt--){ solve(); } return 0; } https://codeforces.com/contest/2253/problem/B B 题意为保留最大交替块长度,在删除基础上 加了一个 相邻可交换的操作
+观察到如果 有两块长度都 &gt;=2 1122 交换一次为 1 2 1 2 贡献增加2 如果只有一块&gt;=2 x1221x 只要x不与2 相同 交换为 x2121x 贡献增加1 先 求出原字符串 通过删除 能保留的最大串,再看 贡献能不能增加即可
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-07 00:00:00 +0000 UTC'>August 7, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to [Edu CF193 div2]" href="http://localhost:1313/posts/cf193/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">[CF2224C]
     </h2>
   </header>
