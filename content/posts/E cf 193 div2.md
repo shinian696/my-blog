@@ -3,7 +3,7 @@ title: "[Edu CF193 div2]"
 date: 2026-08-07
 slug: "CF193"
 categories: ["CF题解"]
-tags: ["思维"]
+tags: ["思维,贪心"]
 draft: false
 ---
 
@@ -143,7 +143,12 @@ int main(){
 ---
 ##### https://codeforces.com/contest/2253/problem/C
 # C 
-无
+求所有不同数字和的最大值,容易想到 从大到小往里放    
+且操作时任意次数,可以重复的,因此我们只要记录能 放进去 的值就行 不管怎么操作    
+考虑 a数组 和 b数组 的大小 只要有一个数组的长度小于 行或列数 我们就能把所有数字放进去    
+如果都等于呢 我们肯定要少放一个 因为 有一个一定会被覆盖 我们让这个覆盖的是最小的就行     
+
+...我也不知道解释的对不对,至少赛时过了
 
 
 
@@ -152,14 +157,76 @@ int main(){
 
 
 ```cpp
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
 
+void solve(){ 
+    int n,m,x,y;
+    cin>>n>>m>>x>>y;
+    vector<ll> a(x);
+    vector<ll> b(y);
+    for(int i=0;i<x;i++){
+        cin>>a[i];
+    }
+    for(int i=0;i<y;i++){
+        cin>>b[i];
+    }
+
+    ll total=min(n,x)+min(m,y);
+    if(min(n,x)==n && min(m,y)==m) total--;
+
+    reverse(a.begin(),a.end());
+    reverse(b.begin(),b.end());
+
+    int cnt=0;
+    int cnta=0 , cntb=0;
+    int ia=0 , ib=0;
+    ll sum=0;
+    while(cnt<total && ( ia<x || ib<y ) ){
+        if(ia<x && ib<y && a[ia]==b[ib]){
+            cnt++;
+            sum+=a[ia];
+            ia++;ib++;
+        }
+        else if( ib >= y || ia<x && a[ia]>b[ib] ){
+            if(cnta < min(n,x)){
+                sum+=a[ia];
+                cnta++;
+                cnt++;
+            }
+            ia++;
+        }
+        else{
+            if(cntb < min(m,y)){
+                sum+=b[ib];
+                cntb++;
+                cnt++;
+            }
+            ib++;
+        }
+    }
+    cout<<sum<<"\n";
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int ttt=1;
+    cin>>ttt;
+    while(ttt--){
+        solve();
+    }   
+    return 0;
+}
 ```
 </details>
 
 ---
 ##### https://codeforces.com/contest/2253/problem/D
 # D 
-无 
+拼尽全力无法战胜...
 
 
 <details class="code-collapse">

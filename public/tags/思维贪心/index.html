@@ -108,29 +108,19 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">[CF1115 div2]
+    <h2 class="entry-hint-parent">[Edu CF193 div2]
     </h2>
   </header>
   <div class="entry-content">
-    <p> https://codeforces.com/contest/2252/problem/A A 题意可知,要使打出的伤害最高,出的牌要最多
-我们考虑牌数最多的牌,因为少的牌能用来当多的牌的挡板,是一定能用掉的
-所以我们考虑 最多牌的次数为m ,剩下的牌为 n-m 那最多的牌次数最多可以有 n-m&#43;2 个 因为最末尾可以连放两个
-于是有两种情况
-1.m&lt;=n-m&#43;2 全部牌都能打出
-2.m&gt;n-m&#43;2 多的牌太多了 多出的牌为 m - (n-m&#43;2) 减去即可
-代码1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; typedef long long ll; void solve(){ int n; cin&gt;&gt;n; vector&lt;int&gt; a(n); int sum=0; int m=0; int t=0; vector&lt;int&gt; cnt(1005,0); for(int i=0;i&lt;n;i&#43;&#43;){ cin&gt;&gt;a[i]; sum&#43;=a[i]; cnt[a[i]]&#43;&#43;; if(cnt[a[i]]&gt;m){ m=cnt[a[i]]; t=a[i]; } } if(m&lt;=n-m&#43;2){ cout&lt;&lt;sum&lt;&lt;&#39;\n&#39;; } else cout&lt;&lt;sum- t * (2*m -n -2)&lt;&lt;&#34;\n&#34;; } int main(){ ios::sync_with_stdio(false); cin.tie(0); cout.tie(0); int ttt=1; cin&gt;&gt;ttt; while(ttt--){ solve(); } return 0; } https://codeforces.com/contest/2252/problem/B B 留下的字符串为交替,且我们删去的字符也是要交替的
-设原来有 N个0 和 M个1 ,最终有 n个0 和 m个1
-我们删去了d0 = N - n 个0 d1 = M-m 个 1 且 |d0 - d1| &lt; = 1 代入得 | (N-M) - (n-m) | &lt; =1 令 x = (N-M) y = (n-m) 且 y的值只能在 {-1,0,1} 三者取
-因| x - y | &lt;= 1 即 x&gt;2 或 x&lt;-2 无解
-若有解 考虑最少操作次数,也就是保留的字符串要最长
-理论最长肯定是 原先字符串 01块 的大小 我们可以算出这个 01 块 的 Y 值(即0和1的个数差) 因为 最终 y肯定在{-1,0,1} 三者取 我们遍历一遍 算出 Y 到 y 这个过程中要变的 长度即 min(|Y-y|) 保留的就是01块长度 len - |Y-y|
-最后的操作次数就是原长减去保留
+    <p> https://codeforces.com/contest/2253/problem/A A 一张牌要战胜所有牌,容易想到 一段连续数字中 不可能 两两都保持整除关系 所以 数值小的肯定会被一个大于它的 打败 因此这张牌只能是最大的,且它在2- (x-1) 中都没有因子 那就是素数 即最大的为素数就存在
+代码1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; typedef long long ll; bool judge(int x){ for(int i=2;i*i&lt;=x;i&#43;&#43;){ if(x%i==0) return false; } return true; } void solve(){ int n; cin&gt;&gt;n; if(judge(n&#43;1)) cout&lt;&lt;&#34;YES\n&#34;; else cout&lt;&lt;&#34;NO\n&#34;; } int main(){ ios::sync_with_stdio(false); cin.tie(0); cout.tie(0); int ttt=1; cin&gt;&gt;ttt; while(ttt--){ solve(); } return 0; } https://codeforces.com/contest/2253/problem/B B 题意为保留最大交替块长度,在删除基础上 加了一个 相邻可交换的操作
+观察到如果 有两块长度都 &gt;=2 1122 交换一次为 1 2 1 2 贡献增加2 如果只有一块&gt;=2 x1221x 只要x不与2 相同 交换为 x2121x 贡献增加1 先 求出原字符串 通过删除 能保留的最大串,再看 贡献能不能增加即可
 ...</p>
   </div>
   <footer class="entry-footer">
 
 <span title='2026-08-07 00:00:00 +0000 UTC'>August 7, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to [CF1115 div2]" href="http://localhost:1313/posts/cf1115/"></a>
+  <a class="entry-link" aria-label="post link to [Edu CF193 div2]" href="http://localhost:1313/posts/cf193/"></a>
 </article>
     </main>
     
