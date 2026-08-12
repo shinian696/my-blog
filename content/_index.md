@@ -7,12 +7,12 @@ title: "主页"
 
 <br>
 
-<a href="/categories/CF题解/" class="nav-card">
+<a href="/categories/cf题解/" class="nav-card">
     <h3>💻 CF题解</h3>
     <p>写题时的一些思路</p>
 </a>
 
-<a href="/categories/JAVA学习/" class="nav-card">
+<a href="/categories/java学习/" class="nav-card">
     <h3>📝 JAVA学习</h3>
     <p>从0开始的java</p>
 </a>
