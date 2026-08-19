@@ -35,7 +35,6 @@ switch (a) {
 ```
 </details>
 
----
 
 #### 2.精简(java12 新特性)
 <details class="code-collapse">
@@ -51,7 +50,6 @@ switch (a) {
 ```
 </details>
 
----
 
 #### 3.枚举
 <details class="code-collapse">
