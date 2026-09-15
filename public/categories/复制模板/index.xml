@@ -23,7 +23,14 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;hr&gt;</description>
+&lt;hr&gt;
+&lt;p&gt;ctrl + alt + m 自动抽取方法
+ctrl + alt + t 包围
+shift + F6     变量批量更改
+ctrl + D       向下复制一行
+alt + insert   JavaBean类快捷生成 / ptg插件生成 (右键)
+ctrl + /       分行注释
+ctrl + shift + / 批量注释&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

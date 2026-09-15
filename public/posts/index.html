@@ -108,6 +108,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">多态练习
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 本文记录了一个关于 Java 多态（Polymorphism） 的经典练习案例。通过“人饲养动物”的场景，演示了父类作为方法参数接收不同子类对象、方法重写，以及使用新版 instanceof 模式匹配进行类型转换的技巧。
+一、 基础父类：Animal 🐾 定义一个通用的动物父类，包含基本属性（年龄、颜色）和一个普通的 eat 方法，供子类重写。
+点击查看 Animal.java 源码1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 package me.sssnian.polymorphismdemo; public class Animal { private int age; private String color; public Animal() { } public Animal(int age, String color) { this.age = age; this.color = color; } public int getAge() { return age; } public void setAge(int age) { this.age = age; } public String getColor() { return color; } public void setColor(String color) { this.color = color; } public void eat(String something) { System.out.println(&#34;动物在吃&#34; &#43; something); } } 二、 具体子类：Dog 与 Cat 🐶🐱 继承自 Animal 类，重写 eat 方法，体现出不同动物进食的独特行为；同时各自拥有特有的行为方法（如看家、抓老鼠）。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-15 00:00:00 +0000 UTC'>September 15, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 多态练习" href="http://localhost:1313/posts/duotai-test/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">学生管理与用户认证系统
     </h2>
   </header>
@@ -143,7 +160,7 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p> 代码ctrl &#43; alt &#43; m 自动抽取方法 ctrl &#43; alt &#43; t 包围 shift &#43; F6 变量批量更改 ctrl &#43; D 向下复制一行 alt &#43; insert JavaBean类快捷生成 / ptg插件生成 (右键)
+    <p> 代码ctrl &#43; alt &#43; m 自动抽取方法 ctrl &#43; alt &#43; t 包围 shift &#43; F6 变量批量更改 ctrl &#43; D 向下复制一行 alt &#43; insert JavaBean类快捷生成 / ptg插件生成 (右键) ctrl &#43; / 分行注释 ctrl &#43; shift &#43; / 批量注释
 </p>
   </div>
   <footer class="entry-footer">
