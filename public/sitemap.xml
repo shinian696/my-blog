@@ -61,5 +61,7 @@
   </url><url>
     <loc>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
     <lastmod>2026-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/interfacedemo/</loc>
   </url>
 </urlset>

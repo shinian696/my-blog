@@ -108,6 +108,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">接口和抽象类
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 本文记录了一个关于 Java 抽象类（Abstract Class）与接口（Interface） 的经典练习案例。通过“运动员与教练”的场景，演示了如何使用抽象类提取事物的共性（如姓名、年龄、教/学），以及如何使用接口来扩展特定角色的额外技能（如部分人员需要学英语）。
+一、 顶层抽象父类：Person 🧑 定义所有人的通用属性。因为直接实例化一个“人”没有具体的业务意义，所以将其定义为 abstract 抽象类，防止被直接创建对象。
+点击查看 Person.java 源码1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package me.sssnian.interfacedemo; //因为创建person对象没有任何意义,所以把person变成抽象类不让被创建 public abstract class Person { private String name; private int age; public Person() { } public Person(String name, int age) { this.name = name; this.age = age; } public String getName() { return name; } public void setName(String name) { this.name = name; } public int getAge() { return age; } public void setAge(int age) { this.age = age; } } 二、 角色抽象类：Coach 与 Sporter 🏃‍♂️ 继承自 Person，并根据角色的不同，定义了各自特有的抽象行为（教练负责教 teach，运动员负责学 study）。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-16 00:00:00 +0000 UTC'>September 16, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 接口和抽象类" href="http://localhost:1313/posts/interfacedemo/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">多态练习
     </h2>
   </header>

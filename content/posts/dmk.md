@@ -24,3 +24,4 @@ ctrl + D       向下复制一行
 alt + insert   JavaBean类快捷生成 / ptg插件生成 (右键)
 ctrl + /       分行注释
 ctrl + shift + / 批量注释
+ctrl + shift + u 大小写
